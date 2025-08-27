@@ -102,7 +102,10 @@ unear-infra/
 ├── unear-pos-backend/           # 가맹점 POS 연동 서버
 ├── unear-admin-backend/         # 관리자 웹 대시보드 백엔드
 ├── unear-log-consumer/          # Redis Stream 로그 컨슈머 (로그 적재)
-└── unear-airflow-analysis/      # 사용자 행동 로그 요약 및 통계 분석 (Airflow DAG)
+├── unear-airflow-analysis/      # 사용자 행동 로그 요약 및 통계 분석 (Airflow DAG)
+├── unear-frontend               # 사용자 서비스 프론트엔드
+├── unear-admin-frontend         # 관리자 대시보드 프론트엔드
+└── unear-pos-frontend           # 포스기 프론트엔드
 </pre>
 
 ---
