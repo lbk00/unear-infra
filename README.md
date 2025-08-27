@@ -17,7 +17,7 @@
 ---
 
 
-## 👥 팀원 소개
+## 팀원 소개
 
 <div align="center">
 
@@ -29,7 +29,7 @@
 
 </div>
 
-### 🎯 역할 분담
+### 역할 분담
 
 <div align="center">
 
@@ -62,10 +62,104 @@
 | **소상공인 제휴**          | 지역 소상공인 매장 추천 및 상생 혜택 제공          |
 | **멤버십 바코드 통합**     | 간편한 바코드 제출을 통한 혜택 이용                |
 | **소셜 로그인**            | Google, Kakao, Naver 간편 로그인 지원              |
+| **사용자 통계 및 이용 내역**            | 사용자 개인 통계 요약 및 상세 제공             |
+| **관리자 대시보드 연동**            | 행동 로그 요약 기반 통계 제공         |
+---
+
+## 시스템 아키텍쳐
+<img width="1129" height="495" alt="스크린샷 2025-08-07 오후 8 56 23" src="https://github.com/user-attachments/assets/c24c1696-15b1-43b7-8d5f-81fb1c334c31" />
 
 ---
 
-## Unear 관련 링크
+## ERD
+<img width="800" height="1017" alt="스크린샷 2025-08-07 오후 9 06 20" src="https://github.com/user-attachments/assets/a90fae99-a296-462e-8608-1d6e4ea84083" />
+
+---
+## 기술 스택 (Backend)
+
+| 구성 요소 | 기술 |
+|-----------|------|
+| Backend | Java, Spring Boot, JPA , OAuth2, JWT, Session , PostgreSQL, PostGIS, PGVector , Redis, Redis Stream, Apache Airflow|
+| DevOps | AWS EC2, ELB, S3, CloudFront, Docker, Docker Hub, GitHub Actions|
+| Tools | Swagger, Postman , DBeaver, Coderabbit|
+| AI | OpenAI, RAG |
+
+---
+## 프로젝트 구조
+
+<pre>
+unear-infra/
+├── unear-user-backend/          # 사용자 서비스 API 서버
+├── unear-pos-backend/           # 가맹점 POS 연동 서버
+├── unear-admin-backend/         # 관리자 웹 대시보드 백엔드
+├── unear-log-consumer/          # Redis Stream 로그 컨슈머 (로그 적재)
+└── unear-airflow-analysis/      # 사용자 행동 로그 요약 및 통계 분석 (Airflow DAG)
+</pre>
+
+---
+
+## 주요 기능 흐름
+
+### 1. 메인 페이지 (MainPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/acf23b55-0d7b-48bc-ac95-ec1c3084c01d" alt="유니어_메인화면" height="400"/>
+</div>
+
+---
+
+### 2. 지도 기반 매장 검색 (MapPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8db915e7-7b34-4250-8c98-b77ef5f0d3f3" alt="지도_페이지_1" height="400" style="margin-right: 10px;"/>
+  <img src="https://github.com/user-attachments/assets/29374bf0-15a8-416e-8189-081785942a50" alt="지도_페이지_2" height="400"/>
+</div>
+
+---
+
+### 3. 개인화 스토리 (StoryPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0763ab0b-b952-4819-ada2-56346c4d2236" alt="스토리페이지" height="400"/>
+</div>
+
+---
+
+### 4. 주니어 스탬프 이벤트 (JuniorPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a6d0d086-3a7e-4893-b134-48fea65ab863" alt="이번주니어" height="400"/>
+</div>
+
+---
+
+### 5. 마이페이지 (MyPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7cb0f32d-148b-4525-a5a8-25f451c47c89" alt="마이페이지1" height="400" style="margin-right: 10px;"/>
+  <img src="https://github.com/user-attachments/assets/a6323572-8484-48a4-b7a8-f5a871d3bc12" alt="마이페이지2" height="400"/>
+</div>
+
+---
+
+### 6. 멤버십 시스템 (MembershipPage)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8a765210-170b-4229-a5ef-ef6317a0a249" alt="유니어_맴버십혜택" height="400"/>
+</div>
+
+---
+
+### 7. 인증 시스템 (Auth)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4fc2a792-7822-488d-99f0-64ec3ad42bdd" alt="로그인 페이지" height="400"/>
+</div>
+
+---
+
+
+## 관련 링크
 
 <div align="center">
 
@@ -76,202 +170,6 @@
 | **Documentation** | [프로젝트 노션](https://veiled-foe-fd5.notion.site/7-U-Near-22077da8c8038036aec4fe7527ca5a54?source=copy_link)                            |
 | **Design**        | [Figma 디자인](https://www.figma.com/design/J8kcia6vzarmRddDKSBaEg/-%EC%9C%A0%EB%A0%88%EC%B9%B4-%EC%9C%B5%ED%95%A9%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--7%ED%8C%80?node-id=400-217&t=GNpcf3g5JsLcFtcy-1)                              |
 | **Video Link**        | [시연영상 링크](https://www.youtube.com/watch?v=6NjBhV3zJFI)              |
-
-</div>
-
----
-
-
-## 🎯 주요 기능 소개
-
-### 🏠 1. 메인 페이지 (MainPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/acf23b55-0d7b-48bc-ac95-ec1c3084c01d" alt="유니어_메인화면" height="400"/>
-</div>
-
-**📊 주요 기능**: 개인화된 대시보드 및 추천 혜택 표시
-
-**🔧 핵심 컴포넌트**:
-
-- 🎯 멤버십 혜택 배너
-- 🏪 추천 매장 리스트
-- 📈 개인 통계 요약
-- 📖 스토리 추천 섹션
-
-**✨ 특징**: 개인화된 콘텐츠, 반응형 디자인, 실시간 데이터 업데이트
-
----
-
-### 🗺️ 2. 지도 기반 매장 검색 (MapPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/8db915e7-7b34-4250-8c98-b77ef5f0d3f3" alt="지도_페이지_1" height="400" style="margin-right: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/29374bf0-15a8-416e-8189-081785942a50" alt="지도_페이지_2" height="400"/>
-</div>
-
-**📍 주요 기능**: 위치 기반 제휴처 검색 및 LG U+ 팝업 스토어 정보 표시
-
-**🔧 핵심 컴포넌트**:
-
-- `MapContainer.tsx`: 카카오맵 통합 컴포넌트
-- `BottomSheetLocationDetail.tsx`: 제휴처 상세 정보 바텀시트
-- `MapActionButtons.tsx`: 지도 액션 버튼들
-- `BottomSheetFilter.tsx`: 필터링 바텀시트
-
-**✨ 특징**: 실시간 위치 추적, 제휴처 진입 시 자동 팝업 알림, 카테고리별 필터링, 즐겨찾기 기능
-
----
-
-### 📖 3. 개인화된 스토리 (StoryPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/0763ab0b-b952-4819-ada2-56346c4d2236" alt="스토리페이지" height="400"/>
-</div>
-
-**🎨 주요 기능**: 개인 맞춤형 할인 혜택 스토리 제공
-
-**🔧 핵심 컴포넌트**:
-
-- `StoryCard.tsx`: 스토리 카드 컴포넌트
-- `StoryLayout.tsx`: 스토리 레이아웃
-- `StoryDetailLayout.tsx`: 스토리 상세 레이아웃
-
-**✨ 특징**: 월별 개인화 스토리, AI 기반 추천, 인터랙티브 카드, 진단 시스템 연계
-
----
-
-### 🎯 4. 주니어 스탬프 이벤트 (JuniorPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/a6d0d086-3a7e-4893-b134-48fea65ab863" alt="이번주니어" height="400"/>
-</div>
-
-**🎲 주요 기능**: 방문 인증을 통한 스탬프 적립 및 룰렛 이벤트 시스템
-
-**🔧 핵심 컴포넌트**:
-
-- `Roulette.tsx`: 룰렛 게임 컴포넌트
-- `ProbabilityRoulette.tsx`: 확률 기반 룰렛
-- `StampRouletteCard.tsx`: 스탬프 룰렛 카드
-- `TodayCouponSection.tsx`: 오늘의 쿠폰 섹션
-
-**✨ 특징**: 방문 인증 스탬프 시스템, 확률 기반 보상, 일일 한정 이벤트, 애니메이션 효과
-
----
-
-### 👤 5. 마이페이지 (MyPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/7cb0f32d-148b-4525-a5a8-25f451c47c89" alt="마이페이지1" height="400" style="margin-right: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/a6323572-8484-48a4-b7a8-f5a871d3bc12" alt="마이페이지2" height="400"/>
-</div>
-
-**⚙️ 주요 기능**: 개인정보 관리, 쿠폰/북마크 관리, 통계 확인
-
-**🔧 핵심 컴포넌트**:
-
-- `UserProfileSection.tsx`: 사용자 프로필 섹션
-- `StatisticsSection.tsx`: 통계 요약 섹션
-- `MembershipBenefitSection.tsx`: 멤버십 혜택 섹션
-- `RecentUsageSection.tsx`: 최근 이용 내역 섹션
-
-**📋 하위 페이지**:
-
-- 🎫 쿠폰 관리 (`/my/coupons`)
-- ⭐ 북마크 관리 (`/my/bookmarks`)
-- 📊 통계 상세 (`/my/statistics`)
-- 📝 이용 내역 (`/my/usage-history`)
-
-**✨ 특징**: 실시간 통계 차트, 쿠폰 상태 관리, 즐겨찾기 매장 관리
-
----
-
-### 💳 6. 멤버십 시스템 (MembershipPage)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/8a765210-170b-4229-a5ef-ef6317a0a249" alt="유니어_맴버십혜택" height="400"/>
-</div>
-
-**🏪 주요 기능**: 브랜드별 멤버십 혜택 조회 및 관리
-
-**✨ 특징**: 브랜드별 할인율 정보, 카테고리 필터링, 혜택 상세 정보
-
----
-
-### 🔐 7. 인증 시스템 (Auth)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/4fc2a792-7822-488d-99f0-64ec3ad42bdd" alt="로그인 페이지" height="400"/>
-</div>
-
-**🔑 주요 기능**: 소셜 로그인 및 회원 관리, 방문/결제 인증 시스템
-
-**🌐 지원 플랫폼**: Kakao, Google, Naver
-
-**✨ 특징**: JWT 기반 인증, 보호된 라우트 관리, 멤버십 바코드 통합 관리
-
----
-
-### 🧩 8. 공통 컴포넌트 (components/common)
-
-| 컴포넌트              | 설명               |
-| --------------------- | ------------------ |
-| `BottomNavigator.tsx` | 하단 탭 네비게이션 |
-| `Header.tsx`          | 페이지별 헤더      |
-| `CouponCard.tsx`      | 쿠폰 카드 컴포넌트 |
-| `LoadingSpinner.tsx`  | 로딩 표시          |
-
-**✨ 특징**: 일관된 디자인 시스템, 접근성 및 반응형 지원
-
----
-
-## 🛠️ 기술 스택
-
-<div align="center">
-
-### Frontend Framework & Language
-
-![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-
-### Build Tools & Development
-
-![Vite](https://img.shields.io/badge/Vite-7.0.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-9.29.0-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-![Prettier](https://img.shields.io/badge/Prettier-3.6.2-F7B93E?style=for-the-badge&logo=prettier&logoColor=white)
-
-### UI & Styling
-
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.6-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-
-### State Management & Routing
-
-![React Router](https://img.shields.io/badge/React_Router-7.6.3-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-5.0.6-FF6B6B?style=for-the-badge)
-
-### Communication & API
-
-![Axios](https://img.shields.io/badge/Axios-1.10.0-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
-
-### UI Components & Libraries
-
-![MUI](https://img.shields.io/badge/MUI-7.2.0-007FFF?style=for-the-badge&logo=mui&logoColor=white)
-![React Icons](https://img.shields.io/badge/React_Icons-5.5.0-E10098?style=for-the-badge&logo=react&logoColor=white)
-
-### Map & Location Services
-
-![Kakao Map](https://img.shields.io/badge/Kakao_Map-API-FFCD00?style=for-the-badge&logo=kakao&logoColor=black)
-
-### Development Tools
-
-![Storybook](https://img.shields.io/badge/Storybook-9.0.17-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
-
-### Deployment
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 </div>
 
