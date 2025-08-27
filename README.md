@@ -75,14 +75,23 @@
 <img width="800" height="1017" alt="스크린샷 2025-08-07 오후 9 06 20" src="https://github.com/user-attachments/assets/a90fae99-a296-462e-8608-1d6e4ea84083" />
 
 ---
-## 기술 스택 (Backend)
+## 기술 스택 
 
+### Backend
+  
 | 구성 요소 | 기술 |
 |-----------|------|
 | Backend | Java, Spring Boot, JPA , OAuth2, JWT, Session , PostgreSQL, PostGIS, PGVector , Redis, Redis Stream, Apache Airflow|
 | DevOps | AWS EC2, ELB, S3, CloudFront, Docker, Docker Hub, GitHub Actions|
 | Tools | Swagger, Postman , DBeaver, Coderabbit|
 | AI | OpenAI, RAG |
+
+### Frontend
+
+| 구성 요소 | 기술 |
+|-----------|------|
+| Frontend	| TypeScript, React, Next.js, Tailwind CSS, Styled-components, Framer Motion, Zustand, Recoil, Redux Toolkit, React Query (TanStack Query), Axios |
+| Tools	| Vite, ESLint, Prettier, Storybook, Vitest, Jest, React Testing Library, Cypress, Vercel, GitHub Actions |
 
 ---
 ## 프로젝트 구조
