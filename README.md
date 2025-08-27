@@ -72,7 +72,13 @@
 ---
 
 ## ERD
-<img width="800" height="1017" alt="스크린샷 2025-08-07 오후 9 06 20" src="https://github.com/user-attachments/assets/a90fae99-a296-462e-8608-1d6e4ea84083" />
+<img width="1874" height="557" alt="스크린샷 2025-08-27 오후 3 31 13" src="https://github.com/user-attachments/assets/cf4d8c39-6ed8-471e-bc38-a43f4ba01655" />
+<img width="1907" height="774" alt="스크린샷 2025-08-27 오후 3 37 08" src="https://github.com/user-attachments/assets/d419a062-5c53-4064-842c-78fe378ed0ea" />
+<img width="1903" height="773" alt="스크린샷 2025-08-27 오후 3 37 26" src="https://github.com/user-attachments/assets/0b943548-9979-44d0-8f7a-fa788883b81a" />
+
+
+
+
 
 ---
 ## 기술 스택 
